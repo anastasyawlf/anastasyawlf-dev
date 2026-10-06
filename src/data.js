@@ -4,8 +4,8 @@ export const profile = {
   location: 'Jakarta, Indonesia',
   email: 'najya.anastasya275@gmail.com',
   phone: '+6281469769158',
-  linkedin: '#', // TODO: isi URL LinkedIn
-  github: '#',   // TODO: isi URL GitHub
+  linkedin: 'https://www.linkedin.com/in/najya-anastasya/',
+  github: 'https://github.com/anastasyawlf',
 }
 
 export const experience = [

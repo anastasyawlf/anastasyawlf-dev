@@ -18,17 +18,17 @@ function useTyping(lines, { speed = 22, pause = 450 } = {}) {
   useEffect(() => {
     let cancelled = false
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-    ;(async () => {
-      for (let i = 0; i < lines.length; i++) {
-        for (let c = 1; c <= lines[i].length; c++) {
-          if (cancelled) return
-          setOut((prev) => { const n = [...prev]; n[i] = lines[i].slice(0, c); return n })
-          await sleep(speed)
+      ; (async () => {
+        for (let i = 0; i < lines.length; i++) {
+          for (let c = 1; c <= lines[i].length; c++) {
+            if (cancelled) return
+            setOut((prev) => { const n = [...prev]; n[i] = lines[i].slice(0, c); return n })
+            await sleep(speed)
+          }
+          if (i < lines.length - 1) setOut((prev) => [...prev, ''])
+          await sleep(pause)
         }
-        if (i < lines.length - 1) setOut((prev) => [...prev, ''])
-        await sleep(pause)
-      }
-    })()
+      })()
     return () => { cancelled = true }
   }, []) // eslint-disable-line
   return out
@@ -44,8 +44,8 @@ const TERMINAL_LINES = [
   'data:    [postgresql, mysql]',
   'infra:   [docker, gcp]',
   '$ stats --career',
-  'production_apps: 3   # AdolPOS, AdolESS, BNI mobile',
-  'gpa: 3.81/4.00   patent: 1   students_mentored: 70+',
+  'production_apps: 3   # AdolPOS, AdolESS, Mobile Banking related',
+  'gpa: 3.81/4.00   patent: 1',
   '$ status',
   'open_to_work: true',
 ]
@@ -126,8 +126,28 @@ function Hero() {
             <a href={`mailto:${profile.email}`} className="border border-emerald-400/60 px-4 py-2 text-emerald-400 transition-colors hover:bg-emerald-400/10">
               Kirim email
             </a>
-            <a href="#experience" className="border border-zinc-800 px-4 py-2 text-zinc-300 transition-colors hover:border-zinc-600">
-              Lihat pengalaman
+            <a
+              href="https://docs.google.com/document/d/1v8oXd33_KbnKh-gjGDiKmLcuTm9C77_AqnPRsGBj3SY/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-zinc-800 px-4 py-2 text-zinc-300 transition-colors hover:border-zinc-600 hover:text-white"
+            >
+              <span>Lihat Resume</span>
+              {/* Icon External Link / Open in New Tab */}
+              <svg
+                className="h-4 w-4 text-zinc-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
             </a>
           </motion.div>
         </div>
@@ -267,17 +287,17 @@ export default function App() {
     <div className="min-h-screen">
       <AmbientLayer />
       <div className="relative z-10">
-      <Nav />
-      <main>
-        <Hero />
-        <Experience />
-        <Highlights />
-        <Skills />
-        <Contact />
-      </main>
-      <footer className="border-t border-zinc-900 py-6 text-center font-mono text-xs text-zinc-600">
-        © {new Date().getFullYear()} {profile.name} — {profile.location}
-      </footer>
+        <Nav />
+        <main>
+          <Hero />
+          <Experience />
+          <Highlights />
+          <Skills />
+          <Contact />
+        </main>
+        <footer className="border-t border-zinc-900 py-6 text-center font-mono text-xs text-zinc-600">
+          © {new Date().getFullYear()} {profile.name} — {profile.location}
+        </footer>
       </div>
     </div>
   )
