@@ -31,3 +31,17 @@ body { @apply bg-zinc-950 text-zinc-300 font-sans antialiased; }
   html { scroll-behavior: auto; }
   .caret::after { animation: none; }
 }
+
+/* drifting dot matrix: 24px period, translate only (GPU-composited) */
+.dot-field {
+  position: absolute; inset: -24px;
+  background-image: radial-gradient(rgb(63 63 70 / 0.5) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: dot-drift 9s linear infinite;
+  will-change: transform;
+}
+.dot-field-bright {
+  background-image: radial-gradient(rgb(52 211 153 / 0.7) 1.2px, transparent 1.2px);
+}
+@keyframes dot-drift { to { transform: translate3d(24px, 24px, 0); } }
+@media (prefers-reduced-motion: reduce) { .dot-field { animation: none; } }
