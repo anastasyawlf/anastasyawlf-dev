@@ -13,7 +13,7 @@ export const experience = [
     company: 'PT Bank Negara Indonesia (Persero) Tbk (via Adidata)',
     role: 'Mobile Developer',
     place: 'Jakarta',
-    period: 'Apr 2026 – Sekarang',
+    period: 'Apr 2026 – Present',
     points: [
       'Develop and maintain mobile banking features using Flutter, supporting high-volume transaction workflows and secure customer-facing services.',
       'Integrate mobile applications with internal banking APIs while ensuring compliance with enterprise security and code quality standards.',

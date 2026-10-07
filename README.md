@@ -2,6 +2,6 @@
 
     npm install
     npm run dev      # http://localhost:5173
-    npm run build    # output di /dist
+    npm run build    # output in /dist
 
-Isi URL LinkedIn & GitHub di `src/data.js` (field `linkedin`, `github`).
+Set your LinkedIn & GitHub URLs in `src/data.js` (fields `linkedin`, `github`).
