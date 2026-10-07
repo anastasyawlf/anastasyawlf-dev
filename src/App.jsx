@@ -66,7 +66,7 @@ function Terminal() {
           <i className="h-2 w-2 rounded-full bg-zinc-800" />
         </span>
       </div>
-      <div className="p-4 min-h-[330px] whitespace-pre-wrap break-words" aria-label="Ringkasan teknis dalam bentuk terminal">
+      <div className="p-4 min-h-[330px] whitespace-pre-wrap break-words" aria-label="Technical summary in terminal form">
         {lines.map((l, i) => (
           <div key={i} className={`${colorFor(l)} ${i === lastIdx ? 'caret' : ''}`}>{l || '\u00A0'}</div>
         ))}
@@ -119,12 +119,12 @@ function Hero() {
           </motion.h1>
 
           <motion.p {...item(0.24)} className="mt-6 max-w-md text-lg leading-relaxed text-zinc-400">
-            Mobile developer yang membangun fitur perbankan dengan Flutter dan sistem backend dengan Go. Berbasis di Jakarta.
+            Mobile developer building banking features with Flutter and backend systems with Go. Based in Jakarta.
           </motion.p>
 
           <motion.div {...item(0.36)} className="mt-8 flex flex-wrap gap-3 font-mono text-sm">
             <a href={`mailto:${profile.email}`} className="border border-emerald-400/60 px-4 py-2 text-emerald-400 transition-colors hover:bg-emerald-400/10">
-              Kirim email
+              Send email
             </a>
             <a
               href="https://docs.google.com/document/d/1v8oXd33_KbnKh-gjGDiKmLcuTm9C77_AqnPRsGBj3SY/edit?usp=sharing"
@@ -132,7 +132,7 @@ function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-zinc-800 px-4 py-2 text-zinc-300 transition-colors hover:border-zinc-600 hover:text-white"
             >
-              <span>Lihat Resume</span>
+              <span>View Resume</span>
               {/* Icon External Link / Open in New Tab */}
               <svg
                 className="h-4 w-4 text-zinc-400"
@@ -265,7 +265,7 @@ function Contact() {
       <SectionTitle id="ct-title">// contact</SectionTitle>
       <Reveal className="mt-10">
         <h2 className="max-w-lg text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
-          Punya produk mobile atau backend yang perlu dikerjakan?
+          Have a mobile or backend product that needs building?
         </h2>
         <dl className="mt-8 divide-y divide-zinc-800 border-y border-zinc-800 font-mono text-sm">
           {rows.map(([k, label, href]) => (
